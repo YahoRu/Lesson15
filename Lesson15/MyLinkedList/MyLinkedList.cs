@@ -113,12 +113,17 @@ namespace Lesson15.MyLinkedList
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            MyLinkedNode<T> current = head;
+            while (current != null)
+            {
+                yield return current.Data;
+                current = current.Next;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return ((IEnumerable)this).GetEnumerator();
         }
 
         private void InitialElement(MyLinkedNode<T> node)
