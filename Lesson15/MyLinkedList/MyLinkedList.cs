@@ -123,7 +123,7 @@ namespace Lesson15.MyLinkedList
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return ((IEnumerable)this).GetEnumerator();
+            return GetEnumerator();
         }
 
         private void InitialElement(MyLinkedNode<T> node)
